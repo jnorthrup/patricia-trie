@@ -90,7 +90,12 @@ public class PatriciaTrie<K, V> extends AbstractPatriciaTrie<K, V>
   public Comparator<? super K> comparator() {
     return keyAnalyzer;
   }
-  
+
+  @Override
+  public TrieEntry<K, V> getNearestEntryForKey(K key) {
+    return super.getNearestEntryForKey(key);
+  }
+
   @Override
   public SortedMap<K, V> prefixMap(K prefix) {
     int lengthInBits = lengthInBits(prefix);
